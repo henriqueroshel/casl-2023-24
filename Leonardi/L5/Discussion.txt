@@ -1,0 +1,30 @@
+Write a piece of code to simulate dynamical processes on graphs.
+    
+    The simulator should be able to:
+    1)  generate in an efficient way a either G(n,p) graphs or regular  grids  (with order of 100k nodes);
+    2)  handle in  an efficient way the FES (resort on properties of Poisson processes). 
+
+    Deliver the code along with a brief report, in which you clearly describe:
+    1)  the data structure you use;
+    2)  which are the events and how the FES is handled.
+    3)  the algorithm according to which you generate samples of  G(n,p) graphs.
+
+    Furthermore for n=100k, p=10^{-4} compare the empirical distribution of the degree with analytical predictions.  
+    Build a q-q plot and execute a \chi^2 test.
+    
+    You find a brief discussion on G(n,p) model  and its properties here: 
+    https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model
+
+    You find tables with \chi^2 quantiles here:
+    https://en.wikipedia.org/wiki/Chi-squared_distribution
+
+After creating the graph you will have nodes (each node has a state) and edges. 
+So you have to implement one of the models professor Leonardi explained last week (eg Voter Model)
+For example if you use Voter, for each node you have to randomly select a neighbor and copy its state (-1 or 1)
+You need FES because you have to handle big amount of nodes (100,000) so you can loop through nodes and schedule time for the next one
+
+okok thanks, and what does this sentence ' handle in  an efficient way the FES (resort on properties of Poisson processes)' mean?
+in particular, I do not clearly understand the meaning of resort on properties of poisson processes
+instead of handling the wake up for each node indipendently, you are supposed to have one exponential distribution that wakes up nodes, not one exponential for each node
+
+I don’t know how much I understood but what I will do is similar to old labs; have arrival rates which are exponentially distributed based on a specific lambda 🤷‍♂️
