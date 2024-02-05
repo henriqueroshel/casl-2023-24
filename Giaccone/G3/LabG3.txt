@@ -1,0 +1,71 @@
+SOCIAL. Simulate how a social media post spreads through a network
+1. Main questions
+- What's the (maximum/average) reach of a post?
+2. Stochastic models
+- A post can be shown to a user according to a bernoulli random variable; the parameter p1 may depend on: 
+	(a) whether or not the user follows the user who made the post, 	(b) social media algorithm (you are more likely to see a post on 
+	a subject you already showed interest before);
+	(c) if someone who is followed by the user shared the post.
+- A post can be shared by a user according to a bernoulli random variable; the parameter p2 can be a fixed value for simplicity.
+3. Main inputs
+- Connections/network of users
+- Users interests - based on the previous posts with which they interacteed
+- Post subject(s)
+4. Main output metrics
+- Average number of people reached by the post
+
+STOCK. Simulate stock market prices
+1. Main questions
+- What's is the value of a share in a certain future moment?
+2. Stochastic models
+- The price of a stock price is mainly influenced by the market's supply and demand. One option for this simulation then could be, from a initial value for supply, demand and stock value, we change the supply and demand value at each instant (iteration) based on a stochastic random variable, for example a gaussian.
+- For simplicity, we may consider a single state variable normally distributed representing the difference supply-demand with parameters mu_s-mu_d and sigma^2_s+sigma^2_d
+3. Main inputs
+- Initial values of stock value and supply/demand difference
+- Average and variance of the described stochatic model
+- Function to obtain the stock value from the market's supply and demand.
+4. Main output metrics
+- Average stock value on the instant of interest
+- Evolution of the stock value over time
+
+STUDENT. Simulate the career of students attending Politecnico
+1. Main questions
+- What's the graduation mark?
+- How long a student takes to graduate?
+2. Stochastic models
+- Number of exams taken each session - according to a binomial distribution
+- Pass/no pass according to a bernoulli random variable
+- grade according to some distribution
+3. Main inputs
+- Number of exams needed to pass for graduation
+- Number of exam sessions per year
+- Probability of passing an exam
+- Number of exams taken by session (average)
+4. Main output metrics
+- Average graduation time
+- Average graduation grade
+
+SIR. Simulate the spread of a disease (SIR model: Susceptible Infected Removed). Removes stands for immune or dead.
+1. Main questions
+- What's the risk a disease presents to society?
+- How many people may contract this disease? How many may it kill?
+2. Stochastic models
+- The contraction of the disease by a person who have been in contact with one of the ways of transmission may follow a Bernoulli distribution, where the probability p depends on the way(s) of transmission.
+- Furthermore, it can be considered to be a binomial distribution, where the parameter n is the number of people who have been in contact with that way of transmission. It can be simplified by an average value, for example, X people per day are in contact with a disease transmissable through the air, while Y people per day are in contact with a disease transmissable through mosquitoes.
+3. Main inputs
+- Disease way(s) of transmission - probability of transmission and average number of people in contact with it by each one of the ways
+4. Main output metrics
+- Average number of people who contracted the disease after a given amount of time.
+
+NATURE. Simulate natural selection
+1. Main questions
+- Is a certain species suscetible to survival or to extinction?
+- Can a certain individual of a species survive given its carachteristics?
+2. Stochastic models
+- For analyzing an individual, we may consider its parents and the characteristics that help that species to survive. We can analyze the genotypes and phenotypes, and with some general genetics knowledge, the traits of the offspring is directly associated with the parents' traits.
+- For each characteristic, we may associate a probability of surviving, given the species background. 
+3. Main inputs
+- Species background: chance of surviving for each possible characteristic
+- Parents traits/characteristics
+4. Main output metrics
+- Average number of generation to survive/until extinction.
